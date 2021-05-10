@@ -12,4 +12,4 @@ The following are included in this repo:
 3. Documentation
 4. Wireframes (High and Low Fidelity)
 5. Presentation Slides
-6. [Video](https://youtu.be/YeulxsLQWHU)
+6. [Video Demonstration](https://youtu.be/YeulxsLQWHU)
