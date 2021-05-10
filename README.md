@@ -1,4 +1,4 @@
-CZ3003-SSAD
+# CZ3003-SSAD
 
 This repo covers the project submission required for CZ3003. This module was a real tough one, as it required us to create a game from scratch that must meet all project requirements. In addition, a ton of documentations were required. Feel free to use our repo as a reference.
 
