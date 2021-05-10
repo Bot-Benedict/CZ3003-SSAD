@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://entities/PerformanceReport/StudentPerformanceReport.gd" type="Script" id=1]
+[ext_resource path="res://images/background.jpg" type="Texture" id=2]
+[ext_resource path="res://images/logo_small.png" type="Texture" id=3]
+[ext_resource path="res://fonts/OpenSans_Normal.tres" type="DynamicFont" id=4]
+[ext_resource path="res://addons/GDCharts/script.gd" type="Script" id=5]
+[ext_resource path="res://addons/GDCharts/icon.png" type="Texture" id=6]
+[ext_resource path="res://fonts/THSarabunNew.tres" type="DynamicFont" id=7]
+[ext_resource path="res://images/modal_box.png" type="Texture" id=8]
+[ext_resource path="res://images/frames/loading/Loading.tres" type="SpriteFrames" id=9]
+[ext_resource path="res://images/generateReport.png" type="Texture" id=10]
+[ext_resource path="res://images/refresh.png" type="Texture" id=11]
+
+[node name="StudentPerformanceReport" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 510.394, 298.801 )
+scale = Vector2( 0.853, 0.501 )
+texture = ExtResource( 2 )
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 179.55, 78.85 )
+texture = ExtResource( 3 )
+
+[node name="StudentOpt" type="OptionButton" parent="."]
+margin_left = 129.846
+margin_top = 180.649
+margin_right = 316.846
+margin_bottom = 208.649
+
+[node name="StudentLbl" type="RichTextLabel" parent="."]
+margin_left = 25.0
+margin_top = 174.0
+margin_right = 293.0
+margin_bottom = 231.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Student:"
+scroll_active = false
+
+[node name="WorldLbl" type="RichTextLabel" parent="."]
+margin_left = 428.417
+margin_top = 174.0
+margin_right = 696.417
+margin_bottom = 231.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "World:"
+scroll_active = false
+
+[node name="WorldOpt" type="OptionButton" parent="."]
+margin_left = 517.921
+margin_top = 180.649
+margin_right = 704.921
+margin_bottom = 208.649
+
+[node name="Graph" type="ReferenceRect" parent="."]
+margin_left = 32.0
+margin_top = 223.0
+margin_right = 995.0
+margin_bottom = 569.0
+script = ExtResource( 5 )
+__meta__ = {
+"_editor_icon": ExtResource( 6 )
+}
+label_font = ExtResource( 7 )
+MAX_VALUES = 12
+
+[node name="loading" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="loadingbg" type="Sprite" parent="loading"]
+position = Vector2( 510.619, 330.049 )
+scale = Vector2( 2.191, 1 )
+texture = ExtResource( 8 )
+
+[node name="loading" type="AnimatedSprite" parent="loading"]
+position = Vector2( 511.949, 326.483 )
+frames = ExtResource( 9 )
+animation = "loading"
+frame = 3
+playing = true
+
+[node name="generateReportBtn" type="TouchScreenButton" parent="."]
+position = Vector2( 805.03, 179.402 )
+scale = Vector2( 0.247917, 0.247917 )
+normal = ExtResource( 10 )
+
+[node name="refresh_btn" type="TouchScreenButton" parent="."]
+position = Vector2( 953.855, 124.004 )
+scale = Vector2( 0.0891244, 0.0891244 )
+normal = ExtResource( 11 )
+
+[node name="WorldNameLbl" type="Label" parent="."]
+margin_left = 203.341
+margin_top = 220.061
+margin_right = 701.341
+margin_bottom = 289.061
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )

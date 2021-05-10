@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://entities/Menu/teacher_MainMenu_Controller.gd" type="Script" id=1]
+[ext_resource path="res://images/background.jpg" type="Texture" id=2]
+[ext_resource path="res://images/logo_small.png" type="Texture" id=3]
+[ext_resource path="res://images/menu_option.png" type="Texture" id=4]
+[ext_resource path="res://fonts/OpenSans_Normal.tres" type="DynamicFont" id=5]
+
+[node name="Teacher_MainMenu_Controller" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 510.394, 298.801 )
+scale = Vector2( 0.853, 0.501 )
+texture = ExtResource( 2 )
+
+[node name="logo" type="Sprite" parent="."]
+position = Vector2( 179.55, 78.85 )
+texture = ExtResource( 3 )
+
+[node name="Settings" type="TouchScreenButton" parent="."]
+position = Vector2( 703.309, 373.764 )
+scale = Vector2( 0.078, 0.078 )
+normal = ExtResource( 4 )
+
+[node name="Discussion_Board" type="TouchScreenButton" parent="."]
+position = Vector2( 486.363, 202.172 )
+scale = Vector2( 0.078, 0.078 )
+normal = ExtResource( 4 )
+
+[node name="Performance_Report" type="TouchScreenButton" parent="."]
+position = Vector2( 252.614, 373.764 )
+scale = Vector2( 0.078, 0.078 )
+normal = ExtResource( 4 )
+
+[node name="Assignment" type="TouchScreenButton" parent="."]
+position = Vector2( 60.167, 202.172 )
+scale = Vector2( 0.078, 0.078 )
+normal = ExtResource( 4 )
+
+[node name="settingstxt" type="RichTextLabel" parent="."]
+margin_left = 774.445
+margin_top = 428.454
+margin_right = 988.445
+margin_bottom = 530.454
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/normal_font = ExtResource( 5 )
+custom_colors/default_color = Color( 0.839216, 0.329412, 0.329412, 1 )
+text = "Settings"
+
+[node name="performancereportxt" type="RichTextLabel" parent="."]
+margin_left = 294.59
+margin_top = 418.768
+margin_right = 875.59
+margin_bottom = 570.768
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/normal_font = ExtResource( 5 )
+custom_colors/default_color = Color( 0.839216, 0.329412, 0.329412, 1 )
+text = "Performance
+      Report"
+
+[node name="Assignments" type="RichTextLabel" parent="."]
+margin_left = 93.2543
+margin_top = 258.191
+margin_right = 484.254
+margin_bottom = 360.191
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/normal_font = ExtResource( 5 )
+custom_colors/default_color = Color( 0.839216, 0.329412, 0.329412, 1 )
+text = "Assignments"
+
+[node name="Assignments2" type="RichTextLabel" parent="."]
+margin_left = 539.746
+margin_top = 239.84
+margin_right = 833.746
+margin_bottom = 383.84
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/normal_font = ExtResource( 5 )
+custom_colors/default_color = Color( 0.839216, 0.329412, 0.329412, 1 )
+text = "Discussion
+    Board"

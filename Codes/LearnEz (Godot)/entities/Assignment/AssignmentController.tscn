@@ -1,0 +1,393 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://entities/Assignment/AssignmentController.gd" type="Script" id=1]
+[ext_resource path="res://images/background.jpg" type="Texture" id=2]
+[ext_resource path="res://images/logo_small.png" type="Texture" id=3]
+[ext_resource path="res://fonts/OpenSans_Normal.tres" type="DynamicFont" id=4]
+[ext_resource path="res://images/button_new-assignment.png" type="Texture" id=5]
+[ext_resource path="res://images/modal_box.png" type="Texture" id=6]
+[ext_resource path="res://entities/Assignment/No_Assignment_Popup.gd" type="Script" id=7]
+[ext_resource path="res://images/button_return.png" type="Texture" id=8]
+[ext_resource path="res://images/frames/loading/Loading.tres" type="SpriteFrames" id=9]
+[ext_resource path="res://images/button_left.png" type="Texture" id=10]
+[ext_resource path="res://images/button_right.png" type="Texture" id=11]
+[ext_resource path="res://images/modal_window.png" type="Texture" id=12]
+
+[node name="AssignmentController" type="Node2D"]
+position = Vector2( 0, -5 )
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 510.394, 298.801 )
+scale = Vector2( 0.853, 0.501 )
+texture = ExtResource( 2 )
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 179.55, 78.85 )
+texture = ExtResource( 3 )
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 376.0
+margin_top = 59.0
+margin_right = 896.0
+margin_bottom = 127.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.694118, 0.109804, 0.109804, 1 )
+text = "ASSIGNMENT BOARD"
+scroll_active = false
+
+[node name="NewAssignment_Btn" type="TouchScreenButton" parent="."]
+position = Vector2( 684, 131 )
+scale = Vector2( 1.212, 1.195 )
+normal = ExtResource( 5 )
+
+[node name="ClassLabel" type="RichTextLabel" parent="."]
+margin_left = 376.0
+margin_top = 127.0
+margin_right = 526.0
+margin_bottom = 207.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Class: "
+scroll_active = false
+
+[node name="ClassOption" type="OptionButton" parent="."]
+margin_left = 469.0
+margin_top = 137.464
+margin_right = 634.0
+margin_bottom = 163.464
+
+[node name="No_Assignment_Popup" type="Sprite" parent="."]
+editor/display_folded = true
+visible = false
+position = Vector2( 510, 330 )
+scale = Vector2( 0.853, 0.8 )
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="No_Assignment_Popup"]
+margin_left = -182.075
+margin_top = -44.113
+margin_right = 552.925
+margin_bottom = 125.887
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "YAY! No assignment currently!"
+
+[node name="Return_Btn" type="TouchScreenButton" parent="No_Assignment_Popup"]
+position = Vector2( -71.512, 16.25 )
+scale = Vector2( 1.412, 1.471 )
+normal = ExtResource( 8 )
+
+[node name="loading" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="loadingbg" type="Sprite" parent="loading"]
+position = Vector2( 510.619, 330.049 )
+scale = Vector2( 2.191, 1 )
+texture = ExtResource( 6 )
+
+[node name="loadingani" type="AnimatedSprite" parent="loading"]
+position = Vector2( 511.949, 326.483 )
+frames = ExtResource( 9 )
+animation = "loading"
+frame = 2
+playing = true
+
+[node name="GoLeft_Btn" type="TouchScreenButton" parent="."]
+position = Vector2( 29, 374 )
+normal = ExtResource( 10 )
+
+[node name="GoRight_Btn" type="TouchScreenButton" parent="."]
+position = Vector2( 959, 374 )
+normal = ExtResource( 11 )
+
+[node name="Refresh_Btn" type="TouchScreenButton" parent="."]
+
+[node name="assignment_1" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 220.83, 395.117 )
+scale = Vector2( 0.2, 0.4 )
+texture = ExtResource( 12 )
+
+[node name="assignment_title_placeholder_1" type="RichTextLabel" parent="assignment_1"]
+margin_left = -580.0
+margin_top = -380.0
+margin_right = 470.0
+margin_bottom = -310.0
+rect_scale = Vector2( 1.1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[url]Assignment Title[/url]"
+text = "Assignment Title"
+scroll_active = false
+
+[node name="assignment_title_1" type="RichTextLabel" parent="assignment_1"]
+margin_left = -580.0
+margin_top = -300.0
+margin_right = 470.0
+margin_bottom = -150.0
+rect_scale = Vector2( 1.1, 0.9 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
+[node name="assignment_details_placeholder_1" type="RichTextLabel" parent="assignment_1"]
+margin_left = -580.0
+margin_top = -154.0
+margin_right = 470.0
+margin_bottom = -84.0
+rect_scale = Vector2( 1.1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[url]Assignment Details[/url]"
+text = "Assignment Details"
+scroll_active = false
+
+[node name="assignment_details_1" type="RichTextLabel" parent="assignment_1"]
+margin_left = -580.0
+margin_top = -74.215
+margin_right = 470.0
+margin_bottom = 155.785
+rect_scale = Vector2( 1.1, 0.9 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
+[node name="assignment_postedby_1" type="RichTextLabel" parent="assignment_1"]
+margin_left = -580.0
+margin_top = 145.785
+margin_right = 470.0
+margin_bottom = 215.785
+rect_scale = Vector2( 1.1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "Posted By:"
+text = "Posted By:"
+scroll_active = false
+
+[node name="assignment_duedate_1" type="RichTextLabel" parent="assignment_1"]
+margin_left = -580.0
+margin_top = 225.785
+margin_right = 470.0
+margin_bottom = 295.785
+rect_scale = Vector2( 1.1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "Due Date:"
+text = "Due Date:"
+
+[node name="assignment_2" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 510, 381.589 )
+scale = Vector2( 0.247117, 0.506812 )
+texture = ExtResource( 12 )
+
+[node name="assignment_title_placeholder_2" type="RichTextLabel" parent="assignment_2"]
+margin_left = -580.0
+margin_top = -380.0
+margin_right = 470.0
+margin_bottom = -310.0
+rect_scale = Vector2( 1.1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[url]Assignment Title[/url]"
+text = "Assignment Title"
+scroll_active = false
+
+[node name="assignment_title_2" type="RichTextLabel" parent="assignment_2"]
+margin_left = -580.0
+margin_top = -300.0
+margin_right = 470.0
+margin_bottom = -150.0
+rect_scale = Vector2( 1.1, 0.9 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
+[node name="assignment_details_placeholder_2" type="RichTextLabel" parent="assignment_2"]
+margin_left = -580.0
+margin_top = -154.215
+margin_right = 470.0
+margin_bottom = -84.215
+rect_scale = Vector2( 1.1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[url]Assignment Details[/url]"
+text = "Assignment Details"
+scroll_active = false
+
+[node name="assignment_details_2" type="RichTextLabel" parent="assignment_2"]
+margin_left = -580.0
+margin_top = -74.2151
+margin_right = 470.0
+margin_bottom = 155.785
+rect_scale = Vector2( 1.1, 0.9 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
+[node name="assignment_postedby_2" type="RichTextLabel" parent="assignment_2"]
+margin_left = -580.0
+margin_top = 145.785
+margin_right = 470.0
+margin_bottom = 215.785
+rect_scale = Vector2( 1.1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "Posted By:"
+text = "Posted By:"
+scroll_active = false
+
+[node name="assignment_duedate_2" type="RichTextLabel" parent="assignment_2"]
+margin_left = -580.0
+margin_top = 225.785
+margin_right = 470.0
+margin_bottom = 295.785
+rect_scale = Vector2( 1.1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "Due Date: "
+text = "Due Date: "
+
+[node name="assignment_URL_2" type="RichTextLabel" parent="assignment_2"]
+
+[node name="assignment_viewmore_2" type="RichTextLabel" parent="assignment_2"]
+margin_left = 291.673
+margin_top = 305.0
+margin_right = 571.673
+margin_bottom = 375.0
+rect_scale = Vector2( 1.1, 0.9 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[url]View More[/url]"
+text = "View More"
+
+[node name="assignment_3" type="Sprite" parent="."]
+position = Vector2( 798.43, 395.117 )
+scale = Vector2( 0.2, 0.4 )
+texture = ExtResource( 12 )
+
+[node name="assignment_title_placeholder_3" type="RichTextLabel" parent="assignment_3"]
+margin_left = -580.0
+margin_top = -380.0
+margin_right = 470.0
+margin_bottom = -310.0
+rect_scale = Vector2( 1.1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[url]Assignment Title[/url]"
+text = "Assignment Title"
+scroll_active = false
+
+[node name="assignment_title_3" type="RichTextLabel" parent="assignment_3"]
+margin_left = -580.0
+margin_top = -300.0
+margin_right = 470.0
+margin_bottom = -150.0
+rect_scale = Vector2( 1.1, 0.9 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
+[node name="assignment_details_placeholder_3" type="RichTextLabel" parent="assignment_3"]
+margin_left = -580.0
+margin_top = -154.0
+margin_right = 470.0
+margin_bottom = -84.0
+rect_scale = Vector2( 1.1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[url]Assignment Details[/url]
+"
+text = "Assignment Details
+"
+scroll_active = false
+
+[node name="assignment_details_3" type="RichTextLabel" parent="assignment_3"]
+margin_left = -580.0
+margin_top = -74.215
+margin_right = 470.0
+margin_bottom = 155.785
+rect_scale = Vector2( 1.1, 0.9 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
+[node name="assignment_postedby_3" type="RichTextLabel" parent="assignment_3"]
+margin_left = -580.0
+margin_top = 145.785
+margin_right = 470.0
+margin_bottom = 215.785
+rect_scale = Vector2( 1.1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "Posted By:"
+text = "Posted By:"
+scroll_active = false
+
+[node name="assignment_duedate_3" type="RichTextLabel" parent="assignment_3"]
+margin_left = -580.0
+margin_top = 225.785
+margin_right = 470.0
+margin_bottom = 295.785
+rect_scale = Vector2( 1.1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "Due Date:"
+text = "Due Date:"
+scroll_active = false

@@ -1,0 +1,309 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://entities/Discussion/DiscussionBoardController.gd" type="Script" id=1]
+[ext_resource path="res://images/background.jpg" type="Texture" id=2]
+[ext_resource path="res://images/logo_small.png" type="Texture" id=3]
+[ext_resource path="res://fonts/OpenSans_Normal.tres" type="DynamicFont" id=4]
+[ext_resource path="res://images/button_new-discussion.png" type="Texture" id=5]
+[ext_resource path="res://images/modal_window.png" type="Texture" id=6]
+[ext_resource path="res://images/button_left.png" type="Texture" id=7]
+[ext_resource path="res://images/button_right.png" type="Texture" id=8]
+[ext_resource path="res://images/modal_box.png" type="Texture" id=9]
+[ext_resource path="res://images/frames/loading/Loading.tres" type="SpriteFrames" id=10]
+[ext_resource path="res://images/refresh.png" type="Texture" id=11]
+
+[node name="DiscussionBoardController" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 510.394, 298.801 )
+scale = Vector2( 0.853, 0.501 )
+texture = ExtResource( 2 )
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 179.55, 78.8501 )
+texture = ExtResource( 3 )
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 377.0
+margin_top = 68.0
+margin_right = 871.0
+margin_bottom = 136.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.694118, 0.109804, 0.109804, 1 )
+text = "DISCUSSION BOARD"
+scroll_active = false
+
+[node name="NewDiscussion_Btn" type="TouchScreenButton" parent="."]
+position = Vector2( 666, 132 )
+scale = Vector2( 1.21171, 1.19512 )
+normal = ExtResource( 5 )
+
+[node name="discussion_1" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 295.516, 295 )
+scale = Vector2( 0.336903, 0.242105 )
+texture = ExtResource( 6 )
+
+[node name="discussion_title_1" type="RichTextLabel" parent="discussion_1"]
+margin_left = -582.944
+margin_top = -379.836
+margin_right = 567.056
+margin_bottom = -209.836
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="discussion_details_1" type="RichTextLabel" parent="discussion_1"]
+margin_left = -580.0
+margin_top = -194.998
+margin_right = 570.0
+margin_bottom = 210.002
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="discussion_postedby_1" type="RichTextLabel" parent="discussion_1"]
+margin_left = -580.0
+margin_top = 245.0
+margin_right = 170.0
+margin_bottom = 345.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="discussion_id_1" type="RichTextLabel" parent="discussion_1"]
+margin_left = 356.188
+margin_top = 270.098
+margin_right = 593.188
+margin_bottom = 372.098
+
+[node name="discussion_viewmore_1" type="RichTextLabel" parent="discussion_1"]
+margin_left = 250.0
+margin_top = 245.0
+margin_right = 550.0
+margin_bottom = 345.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[url={\"data\"=\"\"}]View More[/url]"
+text = "View More"
+
+[node name="discussion_2" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 722, 295 )
+scale = Vector2( 0.337, 0.242 )
+texture = ExtResource( 6 )
+
+[node name="discussion_title_2" type="RichTextLabel" parent="discussion_2"]
+margin_left = -580.0
+margin_top = -380.0
+margin_right = 570.0
+margin_bottom = -210.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="discussion_details_2" type="RichTextLabel" parent="discussion_2"]
+margin_left = -580.0
+margin_top = -195.0
+margin_right = 570.0
+margin_bottom = 210.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="discussion_postedby_2" type="RichTextLabel" parent="discussion_2"]
+margin_left = -580.0
+margin_top = 245.0
+margin_right = 170.0
+margin_bottom = 345.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="discussion_id_2" type="RichTextLabel" parent="discussion_2"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="discussion_viewmore_2" type="RichTextLabel" parent="discussion_2"]
+margin_left = 250.0
+margin_top = 245.0
+margin_right = 550.0
+margin_bottom = 345.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[url={\"data\"=\"\"}]View More[/url]"
+text = "View More"
+
+[node name="discussion_3" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 297.5, 493 )
+scale = Vector2( 0.337, 0.242 )
+texture = ExtResource( 6 )
+
+[node name="discussion_title_3" type="RichTextLabel" parent="discussion_3"]
+margin_left = -580.0
+margin_top = -375.0
+margin_right = 570.0
+margin_bottom = -205.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="discussion_details_3" type="RichTextLabel" parent="discussion_3"]
+margin_left = -580.0
+margin_top = -195.0
+margin_right = 570.0
+margin_bottom = 210.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="discussion_postedby_3" type="RichTextLabel" parent="discussion_3"]
+margin_left = -580.0
+margin_top = 245.0
+margin_right = 170.0
+margin_bottom = 345.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="discussion_id_3" type="RichTextLabel" parent="discussion_3"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="discussion_viewmore_3" type="RichTextLabel" parent="discussion_3"]
+margin_left = 250.0
+margin_top = 245.0
+margin_right = 550.0
+margin_bottom = 345.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[url={\"data\"=\"\"}]View More[/url]"
+text = "View More"
+
+[node name="discussion_4" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 722, 493 )
+scale = Vector2( 0.337, 0.242 )
+texture = ExtResource( 6 )
+
+[node name="discussion_title_4" type="RichTextLabel" parent="discussion_4"]
+margin_left = -582.417
+margin_top = -380.0
+margin_right = 567.583
+margin_bottom = -210.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="discussion_details_4" type="RichTextLabel" parent="discussion_4"]
+margin_left = -580.0
+margin_top = -195.0
+margin_right = 570.0
+margin_bottom = 210.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="discussion_postedby_4" type="RichTextLabel" parent="discussion_4"]
+margin_left = -580.0
+margin_top = 245.0
+margin_right = 170.0
+margin_bottom = 345.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="discussion_id_4" type="RichTextLabel" parent="discussion_4"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="discussion_viewmore_4" type="RichTextLabel" parent="discussion_4"]
+margin_left = 250.0
+margin_top = 245.0
+margin_right = 550.0
+margin_bottom = 345.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[url={\"data\"=\"\"}]View More[/url]"
+text = "View More"
+
+[node name="GoLeft_Btn" type="TouchScreenButton" parent="."]
+position = Vector2( 27.772, 375 )
+normal = ExtResource( 7 )
+
+[node name="GoRight_Btn" type="TouchScreenButton" parent="."]
+position = Vector2( 948.215, 375 )
+normal = ExtResource( 8 )
+
+[node name="loading" type="Popup" parent="."]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="loadingbg" type="Sprite" parent="loading"]
+position = Vector2( 513.195, 303.252 )
+scale = Vector2( 2.285, 1 )
+texture = ExtResource( 9 )
+
+[node name="loading" type="AnimatedSprite" parent="loading"]
+position = Vector2( 552.116, 311.961 )
+frames = ExtResource( 10 )
+animation = "loading"
+frame = 5
+playing = true
+
+[node name="refreshbtn" type="TouchScreenButton" parent="."]
+position = Vector2( 95.8322, 158.394 )
+scale = Vector2( 0.0763176, 0.0763176 )
+normal = ExtResource( 11 )

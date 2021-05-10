@@ -1,0 +1,542 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://entities/Level/LevelController.gd" type="Script" id=1]
+[ext_resource path="res://images/background.jpg" type="Texture" id=2]
+[ext_resource path="res://images/logo_small.png" type="Texture" id=3]
+[ext_resource path="res://fonts/OpenSans_Normal.tres" type="DynamicFont" id=4]
+[ext_resource path="res://images/modal_box.png" type="Texture" id=5]
+[ext_resource path="res://images/currency.png" type="Texture" id=6]
+[ext_resource path="res://images/50-50.png" type="Texture" id=7]
+[ext_resource path="res://images/addtime.png" type="Texture" id=8]
+[ext_resource path="res://entities/Level/UserInventory.gd" type="Script" id=9]
+[ext_resource path="res://entities/Level/BuyPowerUp.gd" type="Script" id=10]
+[ext_resource path="res://images/close_button.png" type="Texture" id=11]
+[ext_resource path="res://images/modal_window.png" type="Texture" id=12]
+[ext_resource path="res://images/coins.png" type="Texture" id=13]
+[ext_resource path="res://images/path1.png" type="Texture" id=14]
+[ext_resource path="res://images/path2.png" type="Texture" id=15]
+[ext_resource path="res://images/path3.png" type="Texture" id=16]
+[ext_resource path="res://images/path4.png" type="Texture" id=17]
+[ext_resource path="res://images/selectworldbg.png" type="Texture" id=18]
+[ext_resource path="res://images/lock.png" type="Texture" id=19]
+[ext_resource path="res://images/frames/stars/stars.tres" type="SpriteFrames" id=20]
+[ext_resource path="res://entities/Level/LevelInformation.gd" type="Script" id=21]
+[ext_resource path="res://images/frames/stars/1star.png" type="Texture" id=22]
+[ext_resource path="res://images/playbtn.png" type="Texture" id=23]
+[ext_resource path="res://images/frames/loading/Loading.tres" type="SpriteFrames" id=24]
+
+[node name="LevelController" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 510.394, 298.801 )
+scale = Vector2( 0.855, 0.501 )
+texture = ExtResource( 2 )
+
+[node name="Node" type="Node" parent="Background"]
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 179.55, 78.85 )
+texture = ExtResource( 3 )
+
+[node name="WorldNumberLbl" type="RichTextLabel" parent="."]
+margin_left = 323.0
+margin_top = 61.0
+margin_right = 1086.0
+margin_bottom = 133.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]World 1[/center]"
+text = "World 1"
+scroll_active = false
+
+[node name="WorldNameLbl" type="RichTextLabel" parent="."]
+margin_left = 313.0
+margin_top = 99.0
+margin_right = 1263.0
+margin_bottom = 171.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]World 1[/center]"
+text = "World 1"
+scroll_active = false
+
+[node name="Currency" type="Node" parent="."]
+
+[node name="background" type="Sprite" parent="Currency"]
+position = Vector2( 932.115, 77.2567 )
+scale = Vector2( 0.264201, 0.210641 )
+texture = ExtResource( 5 )
+
+[node name="currencyIcon" type="Sprite" parent="Currency"]
+position = Vector2( 837.693, 71.0377 )
+scale = Vector2( 0.149134, 0.149134 )
+texture = ExtResource( 6 )
+
+[node name="userCurrency" type="RichTextLabel" parent="Currency"]
+margin_left = 881.627
+margin_top = 54.0451
+margin_right = 1489.63
+margin_bottom = 117.045
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "$98989"
+text = "$98989"
+scroll_active = false
+
+[node name="Powerup" type="Node" parent="."]
+
+[node name="50-50btn" type="TouchScreenButton" parent="Powerup"]
+position = Vector2( 800.168, 114.955 )
+scale = Vector2( 0.107482, 0.107482 )
+normal = ExtResource( 7 )
+
+[node name="addtimebtn" type="TouchScreenButton" parent="Powerup"]
+position = Vector2( 880.327, 117 )
+scale = Vector2( 0.100263, 0.100263 )
+normal = ExtResource( 8 )
+
+[node name="UserInventory" type="Node" parent="."]
+script = ExtResource( 9 )
+
+[node name="Power1Lbl" type="RichTextLabel" parent="UserInventory"]
+margin_left = 837.734
+margin_top = 92.0
+margin_right = 868.734
+margin_bottom = 152.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.74902, 0.317647, 0.368627, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="Power2Lbl" type="RichTextLabel" parent="UserInventory"]
+margin_left = 914.092
+margin_top = 92.0
+margin_right = 945.092
+margin_bottom = 152.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.74902, 0.317647, 0.368627, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="BuyPowerUp" type="Popup" parent="."]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+popup_exclusive = true
+script = ExtResource( 10 )
+
+[node name="Background" type="Sprite" parent="BuyPowerUp"]
+position = Vector2( 534.718, 326.914 )
+scale = Vector2( 0.543467, 2.18473 )
+texture = ExtResource( 5 )
+
+[node name="CloseBtn" type="TouchScreenButton" parent="BuyPowerUp"]
+position = Vector2( 642.905, 113.04 )
+scale = Vector2( 0.379531, 0.379531 )
+normal = ExtResource( 11 )
+
+[node name="SelectedPowerUpImg" type="Control" parent="BuyPowerUp"]
+
+[node name="PowerBg1" type="Sprite" parent="BuyPowerUp/SelectedPowerUpImg"]
+position = Vector2( 534.98, 264.433 )
+scale = Vector2( 0.278371, 0.278371 )
+texture = ExtResource( 7 )
+
+[node name="PowerBg2" type="Sprite" parent="BuyPowerUp/SelectedPowerUpImg"]
+position = Vector2( 532.098, 265.132 )
+scale = Vector2( 0.29049, 0.29049 )
+texture = ExtResource( 8 )
+
+[node name="quantityLbl" type="RichTextLabel" parent="BuyPowerUp"]
+margin_left = 410.905
+margin_top = 150.416
+margin_right = 891.905
+margin_bottom = 225.416
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]You have: 10"
+text = "You have: 10"
+scroll_active = false
+
+[node name="nameLbl" type="RichTextLabel" parent="BuyPowerUp"]
+margin_left = 397.0
+margin_top = 343.0
+margin_right = 859.0
+margin_bottom = 421.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center]Fifty-Fifty"
+text = "Fifty-Fifty"
+scroll_active = false
+
+[node name="descriptionLbl" type="RichTextLabel" parent="BuyPowerUp"]
+margin_left = 396.0
+margin_top = 385.0
+margin_right = 1093.0
+margin_bottom = 513.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Description"
+text = "Description"
+scroll_active = false
+
+[node name="buyBtn" type="TouchScreenButton" parent="BuyPowerUp"]
+position = Vector2( 460.774, 445.706 )
+scale = Vector2( 0.136284, 0.0530272 )
+normal = ExtResource( 12 )
+
+[node name="currency" type="Sprite" parent="BuyPowerUp/buyBtn"]
+position = Vector2( 199.11, 364.005 )
+scale = Vector2( 0.332487, 1.21585 )
+texture = ExtResource( 13 )
+
+[node name="cost" type="RichTextLabel" parent="BuyPowerUp/buyBtn"]
+margin_left = 340.91
+margin_top = 49.9727
+margin_right = 433.91
+margin_bottom = 125.973
+rect_scale = Vector2( 7, 10 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.406738, 0.0762634, 0.0762634, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]900[/center]"
+text = "900"
+scroll_active = false
+
+[node name="ErrorLbl" type="RichTextLabel" parent="BuyPowerUp"]
+visible = false
+margin_left = 453.619
+margin_top = 485.603
+margin_right = 902.619
+margin_bottom = 557.603
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Not Enough Coins!"
+scroll_active = false
+
+[node name="Paths" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Path1" type="Sprite" parent="Paths"]
+show_behind_parent = true
+position = Vector2( 173.03, 376.61 )
+scale = Vector2( 1.47733, 1.83147 )
+texture = ExtResource( 14 )
+
+[node name="Path2" type="Sprite" parent="Paths"]
+show_behind_parent = true
+position = Vector2( 341.049, 221.24 )
+scale = Vector2( 1.50223, 1.42225 )
+texture = ExtResource( 15 )
+
+[node name="Path3" type="Sprite" parent="Paths"]
+show_behind_parent = true
+position = Vector2( 431.841, 288.543 )
+scale = Vector2( 1.46358, 1.39054 )
+texture = ExtResource( 16 )
+
+[node name="Path4" type="Sprite" parent="Paths"]
+position = Vector2( 620.045, 318.615 )
+scale = Vector2( 1.25538, 1.96912 )
+texture = ExtResource( 17 )
+
+[node name="Path5" type="Sprite" parent="Paths"]
+show_behind_parent = true
+position = Vector2( 733.988, 510.499 )
+scale = Vector2( 1.46358, 1.39054 )
+texture = ExtResource( 16 )
+
+[node name="Path6" type="Sprite" parent="Paths"]
+show_behind_parent = true
+position = Vector2( 818.147, 426.729 )
+scale = Vector2( 1.61911, 1.83147 )
+texture = ExtResource( 14 )
+
+[node name="SelectLvlBtn" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Level1Btn" type="TouchScreenButton" parent="SelectLvlBtn"]
+position = Vector2( 60.143, 410.977 )
+scale = Vector2( 0.291486, 0.291486 )
+normal = ExtResource( 18 )
+
+[node name="Level2Btn" type="TouchScreenButton" parent="SelectLvlBtn"]
+position = Vector2( 201.909, 254.892 )
+scale = Vector2( 0.291486, 0.291486 )
+normal = ExtResource( 18 )
+
+[node name="Level3Btn" type="TouchScreenButton" parent="SelectLvlBtn"]
+position = Vector2( 453.072, 171.701 )
+scale = Vector2( 0.291486, 0.291486 )
+normal = ExtResource( 18 )
+
+[node name="Level4Btn" type="TouchScreenButton" parent="SelectLvlBtn"]
+position = Vector2( 612.885, 347.97 )
+scale = Vector2( 0.291486, 0.291486 )
+normal = ExtResource( 18 )
+
+[node name="Level5Btn" type="TouchScreenButton" parent="SelectLvlBtn"]
+position = Vector2( 836.274, 294.987 )
+scale = Vector2( 0.291486, 0.291486 )
+normal = ExtResource( 18 )
+
+[node name="LevelNames" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Level1Lbl" type="RichTextLabel" parent="LevelNames"]
+margin_left = 66.0
+margin_top = 448.0
+margin_right = 198.0
+margin_bottom = 534.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="Level2Lbl" type="RichTextLabel" parent="LevelNames"]
+margin_left = 204.902
+margin_top = 289.051
+margin_right = 336.902
+margin_bottom = 375.051
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="Level3Lbl" type="RichTextLabel" parent="LevelNames"]
+margin_left = 455.497
+margin_top = 204.564
+margin_right = 587.497
+margin_bottom = 290.564
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="Level4Lbl" type="RichTextLabel" parent="LevelNames"]
+margin_left = 617.311
+margin_top = 380.697
+margin_right = 749.311
+margin_bottom = 466.697
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="Level5Lbl" type="RichTextLabel" parent="LevelNames"]
+margin_left = 840.699
+margin_top = 323.418
+margin_right = 972.699
+margin_bottom = 409.418
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="LevelLocks" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Lock1" type="Sprite" parent="LevelLocks"]
+position = Vector2( 180.429, 432.457 )
+scale = Vector2( 0.166546, 0.166546 )
+texture = ExtResource( 19 )
+
+[node name="Lock2" type="Sprite" parent="LevelLocks"]
+position = Vector2( 320.763, 272.075 )
+scale = Vector2( 0.166546, 0.166546 )
+texture = ExtResource( 19 )
+
+[node name="Lock3" type="Sprite" parent="LevelLocks"]
+position = Vector2( 577.086, 197.613 )
+scale = Vector2( 0.166546, 0.166546 )
+texture = ExtResource( 19 )
+
+[node name="Lock4" type="Sprite" parent="LevelLocks"]
+position = Vector2( 727.444, 366.586 )
+scale = Vector2( 0.166546, 0.166546 )
+texture = ExtResource( 19 )
+
+[node name="Lock5" type="Sprite" parent="LevelLocks"]
+position = Vector2( 957.992, 302.147 )
+scale = Vector2( 0.166546, 0.166546 )
+texture = ExtResource( 19 )
+
+[node name="Stars" type="Node" parent="."]
+
+[node name="level1star" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 125.753, 542.125 )
+scale = Vector2( 0.607129, 0.607129 )
+frames = ExtResource( 20 )
+animation = "3star"
+
+[node name="level2star" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 269.879, 390.5 )
+scale = Vector2( 0.607129, 0.607129 )
+frames = ExtResource( 20 )
+animation = "2star"
+
+[node name="level3star" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 519.547, 303.5 )
+scale = Vector2( 0.607129, 0.607129 )
+frames = ExtResource( 20 )
+animation = "2star"
+
+[node name="level4star" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 681.602, 486.141 )
+scale = Vector2( 0.607129, 0.607129 )
+frames = ExtResource( 20 )
+animation = "2star"
+
+[node name="level5star" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 903.209, 431.322 )
+scale = Vector2( 0.607129, 0.607129 )
+frames = ExtResource( 20 )
+animation = "2star"
+
+[node name="LevelInformation" type="Popup" parent="."]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+popup_exclusive = true
+script = ExtResource( 21 )
+
+[node name="Background" type="Sprite" parent="LevelInformation"]
+position = Vector2( 524.058, 353.282 )
+scale = Vector2( 1.15571, 1.98075 )
+texture = ExtResource( 5 )
+
+[node name="levelname" type="RichTextLabel" parent="LevelInformation"]
+margin_left = 242.0
+margin_top = 188.0
+margin_right = 1348.0
+margin_bottom = 354.0
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "2-1: UML Modelling"
+text = "2-1: UML Modelling"
+scroll_active = false
+
+[node name="levelDescription" type="RichTextLabel" parent="LevelInformation"]
+margin_left = 241.006
+margin_top = 231.536
+margin_right = 1153.01
+margin_bottom = 929.536
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "Level Description"
+text = "Level Description"
+scroll_active = false
+
+[node name="close" type="TouchScreenButton" parent="LevelInformation"]
+position = Vector2( 786.762, 169.848 )
+scale = Vector2( 0.339452, 0.339452 )
+normal = ExtResource( 11 )
+
+[node name="stars" type="Sprite" parent="LevelInformation"]
+position = Vector2( 263.501, 460.501 )
+scale = Vector2( 0.534999, 0.534999 )
+texture = ExtResource( 22 )
+
+[node name="stars2" type="Sprite" parent="LevelInformation"]
+position = Vector2( 330.501, 460.501 )
+scale = Vector2( 0.534999, 0.534999 )
+texture = ExtResource( 22 )
+
+[node name="stars3" type="Sprite" parent="LevelInformation"]
+position = Vector2( 398.501, 460.501 )
+scale = Vector2( 0.534999, 0.534999 )
+texture = ExtResource( 22 )
+
+[node name="stardescp" type="RichTextLabel" parent="LevelInformation"]
+margin_left = 243.001
+margin_top = 490.001
+margin_right = 283.001
+margin_bottom = 530.001
+text = "< 300"
+
+[node name="stardescp2" type="RichTextLabel" parent="LevelInformation"]
+margin_left = 299.0
+margin_top = 490.0
+margin_right = 375.0
+margin_bottom = 530.0
+text = "301 - 599"
+
+[node name="stardescp3" type="RichTextLabel" parent="LevelInformation"]
+margin_left = 382.0
+margin_top = 490.0
+margin_right = 458.0
+margin_bottom = 530.0
+text = ">600"
+
+[node name="userScore" type="RichTextLabel" parent="LevelInformation"]
+margin_left = 658.685
+margin_top = 410.632
+margin_right = 1144.68
+margin_bottom = 501.632
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "Your Score: 800"
+text = "Your Score: 800"
+scroll_active = false
+
+[node name="playBtn" type="TouchScreenButton" parent="LevelInformation"]
+modulate = Color( 0.760784, 0.784314, 0.894118, 1 )
+self_modulate = Color( 0.945098, 0.945098, 0.945098, 1 )
+position = Vector2( 749.685, 447.738 )
+scale = Vector2( 0.115232, 0.115232 )
+z_index = 2
+normal = ExtResource( 23 )
+
+[node name="Leaderboard" type="Label" parent="LevelInformation"]
+margin_left = 628.381
+margin_top = 232.632
+margin_right = 979.381
+margin_bottom = 301.632
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Leaderboard"
+uppercase = true
+
+[node name="leaderboardInfo" type="RichTextLabel" parent="LevelInformation"]
+margin_left = 625.0
+margin_top = 264.0
+margin_right = 1212.0
+margin_bottom = 741.0
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+
+[node name="Loading" type="Popup" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Loading"]
+position = Vector2( 513.195, 303.252 )
+scale = Vector2( 2.28481, 1 )
+z_index = 1
+texture = ExtResource( 5 )
+
+[node name="loadingani" type="AnimatedSprite" parent="Loading"]
+position = Vector2( 552.116, 311.961 )
+z_index = 1
+frames = ExtResource( 24 )
+animation = "loading"
+frame = 17
+playing = true

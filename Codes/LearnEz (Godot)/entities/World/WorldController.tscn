@@ -1,0 +1,295 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://entities/World/WorldController.gd" type="Script" id=1]
+[ext_resource path="res://images/background.jpg" type="Texture" id=2]
+[ext_resource path="res://images/logo_small.png" type="Texture" id=3]
+[ext_resource path="res://fonts/OpenSans_Normal.tres" type="DynamicFont" id=4]
+[ext_resource path="res://images/selectworldbg.png" type="Texture" id=5]
+[ext_resource path="res://images/worldNameBanner.png" type="Texture" id=6]
+[ext_resource path="res://images/lock.png" type="Texture" id=7]
+[ext_resource path="res://images/frames/stars/stars.tres" type="SpriteFrames" id=8]
+[ext_resource path="res://images/playbtn.png" type="Texture" id=9]
+[ext_resource path="res://images/modal_box.png" type="Texture" id=10]
+[ext_resource path="res://images/frames/loading/Loading.tres" type="SpriteFrames" id=11]
+
+[node name="WorldController" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 510.349, 298.801 )
+scale = Vector2( 0.853, 0.502394 )
+texture = ExtResource( 2 )
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 179.55, 78.8501 )
+texture = ExtResource( 3 )
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 401.971
+margin_top = 86.0
+margin_right = 767.971
+margin_bottom = 154.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.694118, 0.109804, 0.109804, 1 )
+text = "SELECT WORLD
+"
+scroll_active = false
+
+[node name="WorldBackground" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="World1" type="TouchScreenButton" parent="WorldBackground"]
+position = Vector2( 82.0782, 152.029 )
+scale = Vector2( 0.409938, 0.409938 )
+normal = ExtResource( 5 )
+
+[node name="World1Banner" type="Sprite" parent="WorldBackground/World1"]
+position = Vector2( 243.761, 410.444 )
+scale = Vector2( 1.41182, 0.841582 )
+texture = ExtResource( 6 )
+
+[node name="World2" type="TouchScreenButton" parent="WorldBackground"]
+position = Vector2( 393.206, 152.029 )
+scale = Vector2( 0.409938, 0.409938 )
+normal = ExtResource( 5 )
+
+[node name="World2Banner" type="Sprite" parent="WorldBackground/World2"]
+position = Vector2( 237.73, 410.444 )
+scale = Vector2( 1.41182, 0.841582 )
+texture = ExtResource( 6 )
+
+[node name="World3" type="TouchScreenButton" parent="WorldBackground"]
+position = Vector2( 687.652, 152.029 )
+scale = Vector2( 0.409938, 0.409938 )
+normal = ExtResource( 5 )
+
+[node name="World3Banner" type="Sprite" parent="WorldBackground/World3"]
+position = Vector2( 259.183, 410.444 )
+scale = Vector2( 1.41182, 0.841582 )
+texture = ExtResource( 6 )
+
+[node name="World4" type="TouchScreenButton" parent="WorldBackground"]
+position = Vector2( 80.85, 379.778 )
+scale = Vector2( 0.409938, 0.409938 )
+normal = ExtResource( 5 )
+
+[node name="World4Banner" type="Sprite" parent="WorldBackground/World4"]
+position = Vector2( 243.761, 409.668 )
+scale = Vector2( 1.41182, 0.841582 )
+texture = ExtResource( 6 )
+
+[node name="World5" type="TouchScreenButton" parent="WorldBackground"]
+position = Vector2( 393.206, 379.778 )
+scale = Vector2( 0.409938, 0.409938 )
+normal = ExtResource( 5 )
+
+[node name="World5Banner" type="Sprite" parent="WorldBackground/World5"]
+position = Vector2( 237.73, 409.668 )
+scale = Vector2( 1.41182, 0.841582 )
+texture = ExtResource( 6 )
+
+[node name="World6" type="TouchScreenButton" parent="WorldBackground"]
+position = Vector2( 687.652, 379.778 )
+scale = Vector2( 0.409938, 0.409938 )
+normal = ExtResource( 5 )
+
+[node name="World6Banner" type="Sprite" parent="WorldBackground/World6"]
+position = Vector2( 259.183, 409.668 )
+scale = Vector2( 1.41182, 0.841582 )
+texture = ExtResource( 6 )
+
+[node name="WorldTitlesText" type="Node" parent="."]
+
+[node name="World1Title" type="RichTextLabel" parent="WorldTitlesText"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 86.0
+margin_top = 304.0
+margin_right = 359.0
+margin_bottom = 322.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/mono_font = ExtResource( 4 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="World2Title" type="RichTextLabel" parent="WorldTitlesText"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 394.0
+margin_top = 304.0
+margin_right = 670.0
+margin_bottom = 322.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/mono_font = ExtResource( 4 )
+bbcode_enabled = true
+scroll_active = false
+override_selected_font_color = true
+
+[node name="World3Title" type="RichTextLabel" parent="WorldTitlesText"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 697.0
+margin_top = 304.0
+margin_right = 975.0
+margin_bottom = 322.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/mono_font = ExtResource( 4 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="World4Title" type="RichTextLabel" parent="WorldTitlesText"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 84.0
+margin_top = 532.0
+margin_right = 359.0
+margin_bottom = 550.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/mono_font = ExtResource( 4 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="World5Title" type="RichTextLabel" parent="WorldTitlesText"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 394.0
+margin_top = 530.0
+margin_right = 669.0
+margin_bottom = 548.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/mono_font = ExtResource( 4 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="World6Title" type="RichTextLabel" parent="WorldTitlesText"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 697.0
+margin_top = 530.0
+margin_right = 973.0
+margin_bottom = 548.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/mono_font = ExtResource( 4 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="WorldUnlockedStatus" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="World1lock" type="Sprite" parent="WorldUnlockedStatus"]
+visible = false
+position = Vector2( 182.272, 224.377 )
+scale = Vector2( 0.223078, 0.223078 )
+texture = ExtResource( 7 )
+
+[node name="World2lock" type="Sprite" parent="WorldUnlockedStatus"]
+visible = false
+position = Vector2( 494.737, 224.377 )
+scale = Vector2( 0.223078, 0.223078 )
+texture = ExtResource( 7 )
+
+[node name="World3lock" type="Sprite" parent="WorldUnlockedStatus"]
+visible = false
+position = Vector2( 789.474, 224.377 )
+scale = Vector2( 0.223078, 0.223078 )
+texture = ExtResource( 7 )
+
+[node name="World4lock" type="Sprite" parent="WorldUnlockedStatus"]
+visible = false
+position = Vector2( 178.948, 449.308 )
+scale = Vector2( 0.223078, 0.223078 )
+texture = ExtResource( 7 )
+
+[node name="World5lock" type="Sprite" parent="WorldUnlockedStatus"]
+visible = false
+position = Vector2( 488.089, 450.416 )
+scale = Vector2( 0.223078, 0.223078 )
+texture = ExtResource( 7 )
+
+[node name="World6lock" type="Sprite" parent="WorldUnlockedStatus"]
+visible = false
+position = Vector2( 795.015, 450.416 )
+scale = Vector2( 0.223078, 0.223078 )
+texture = ExtResource( 7 )
+
+[node name="Stars" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="star1" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 182.305, 243.675 )
+scale = Vector2( 0.7473, 0.7473 )
+frames = ExtResource( 8 )
+animation = "3star"
+
+[node name="star2" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 495.473, 242.773 )
+scale = Vector2( 0.7473, 0.7473 )
+frames = ExtResource( 8 )
+animation = "3star"
+
+[node name="star3" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 792.396, 242.773 )
+scale = Vector2( 0.7473, 0.7473 )
+frames = ExtResource( 8 )
+animation = "3star"
+
+[node name="star4" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 178.895, 473.711 )
+scale = Vector2( 0.7473, 0.7473 )
+frames = ExtResource( 8 )
+animation = "3star"
+
+[node name="star5" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 497.309, 473.711 )
+scale = Vector2( 0.7473, 0.7473 )
+frames = ExtResource( 8 )
+animation = "3star"
+
+[node name="star6" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 791.797, 473.711 )
+scale = Vector2( 0.7473, 0.7473 )
+frames = ExtResource( 8 )
+animation = "3star"
+
+[node name="WorldPlay" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="World1Play" type="TouchScreenButton" parent="WorldPlay"]
+position = Vector2( 148, 208 )
+scale = Vector2( 0.130858, 0.130858 )
+normal = ExtResource( 9 )
+
+[node name="World2Play" type="TouchScreenButton" parent="WorldPlay"]
+position = Vector2( 460, 208 )
+scale = Vector2( 0.130858, 0.130858 )
+normal = ExtResource( 9 )
+
+[node name="World3Play" type="TouchScreenButton" parent="WorldPlay"]
+position = Vector2( 759.001, 208 )
+scale = Vector2( 0.130858, 0.130858 )
+normal = ExtResource( 9 )
+
+[node name="World4Play" type="TouchScreenButton" parent="WorldPlay"]
+position = Vector2( 148, 432 )
+scale = Vector2( 0.130858, 0.130858 )
+normal = ExtResource( 9 )
+
+[node name="World5Play" type="TouchScreenButton" parent="WorldPlay"]
+position = Vector2( 461, 432 )
+scale = Vector2( 0.130858, 0.130858 )
+normal = ExtResource( 9 )
+
+[node name="World6Play" type="TouchScreenButton" parent="WorldPlay"]
+position = Vector2( 758.001, 432 )
+scale = Vector2( 0.130858, 0.130858 )
+normal = ExtResource( 9 )
+
+[node name="loading" type="Popup" parent="."]
+popup_exclusive = true
+
+[node name="loadingbg" type="Sprite" parent="loading"]
+position = Vector2( 510.619, 330.049 )
+scale = Vector2( 2.19116, 1 )
+texture = ExtResource( 10 )
+
+[node name="loadingani" type="AnimatedSprite" parent="loading"]
+position = Vector2( 511.949, 326.483 )
+frames = ExtResource( 11 )
+animation = "loading"
+frame = 8
+playing = true

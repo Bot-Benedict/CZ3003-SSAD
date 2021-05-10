@@ -1,0 +1,124 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://entities/Discussion/PostComment.gd" type="Script" id=1]
+[ext_resource path="res://images/background.jpg" type="Texture" id=2]
+[ext_resource path="res://images/logo_small.png" type="Texture" id=3]
+[ext_resource path="res://fonts/OpenSans_Normal.tres" type="DynamicFont" id=4]
+[ext_resource path="res://images/button_post.png" type="Texture" id=5]
+[ext_resource path="res://images/modal_box.png" type="Texture" id=6]
+[ext_resource path="res://entities/Discussion/Post_Comment_Success_Popup.gd" type="Script" id=7]
+[ext_resource path="res://images/button_done.png" type="Texture" id=8]
+[ext_resource path="res://images/frames/loading/Loading.tres" type="SpriteFrames" id=9]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.847059, 0.8, 0.8, 1 )
+
+[node name="PostComment" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 510.394, 298.801 )
+scale = Vector2( 0.853, 0.501 )
+texture = ExtResource( 2 )
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 179.55, 78.85 )
+texture = ExtResource( 3 )
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 410.0
+margin_top = 66.0
+margin_right = 813.0
+margin_bottom = 134.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.694118, 0.109804, 0.109804, 1 )
+text = "POST COMMENT"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 126.0
+margin_top = 186.0
+margin_right = 808.0
+margin_bottom = 253.0
+rect_scale = Vector2( 0.45, 0.45 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "ENTER COMMENT:"
+text = "ENTER COMMENT:"
+scroll_active = false
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 127.0
+margin_top = 231.0
+margin_right = 892.0
+margin_bottom = 401.0
+custom_styles/normal = SubResource( 1 )
+custom_colors/font_color_selected = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 133.0
+margin_top = 410.0
+margin_right = 1791.0
+margin_bottom = 477.0
+rect_scale = Vector2( 0.45, 0.45 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "<Error Message Here>"
+scroll_active = false
+
+[node name="PostComment_Btn" type="TouchScreenButton" parent="."]
+position = Vector2( 805, 450 )
+scale = Vector2( 1.052, 1.324 )
+normal = ExtResource( 5 )
+
+[node name="Post_Comment_Success_Popup" type="Sprite" parent="."]
+position = Vector2( 510, 330 )
+scale = Vector2( 0.853, 0.8 )
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Post_Comment_Success_Popup"]
+margin_left = -218.656
+margin_top = -50.0
+margin_right = 885.344
+margin_bottom = 121.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Your comment has been posted successfully!"
+scroll_active = false
+
+[node name="done_btn" type="TouchScreenButton" parent="Post_Comment_Success_Popup"]
+position = Vector2( -70.34, 0 )
+scale = Vector2( 1.412, 1.471 )
+normal = ExtResource( 8 )
+
+[node name="loading" type="Popup" parent="."]
+visible = true
+margin_left = 2.0
+margin_top = 15.1093
+margin_right = 40.0
+margin_bottom = 53.1093
+
+[node name="loadingbg" type="Sprite" parent="loading"]
+position = Vector2( 513.195, 303.252 )
+scale = Vector2( 2.285, 1 )
+texture = ExtResource( 6 )
+
+[node name="loading" type="AnimatedSprite" parent="loading"]
+position = Vector2( 552.116, 311.961 )
+frames = ExtResource( 9 )
+animation = "loading"
+frame = 1
+playing = true

@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://entities/PerformanceReport/PerformanceReportController.gd" type="Script" id=1]
+[ext_resource path="res://images/background.jpg" type="Texture" id=2]
+[ext_resource path="res://images/logo_small.png" type="Texture" id=3]
+[ext_resource path="res://entities/PerformanceReport/Graph.gd" type="Script" id=4]
+[ext_resource path="res://fonts/THSarabunNew.tres" type="DynamicFont" id=5]
+[ext_resource path="res://fonts/OpenSans_Normal.tres" type="DynamicFont" id=6]
+[ext_resource path="res://images/generateReport.png" type="Texture" id=7]
+[ext_resource path="res://images/modal_box.png" type="Texture" id=8]
+[ext_resource path="res://images/frames/loading/Loading.tres" type="SpriteFrames" id=9]
+[ext_resource path="res://images/refresh.png" type="Texture" id=10]
+
+[node name="PerformanceReportController" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 510.394, 298.801 )
+scale = Vector2( 0.853, 0.501 )
+texture = ExtResource( 2 )
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 179.55, 78.85 )
+texture = ExtResource( 3 )
+
+[node name="Graph" type="ReferenceRect" parent="."]
+margin_left = 13.0
+margin_top = 224.0
+margin_right = 647.0
+margin_bottom = 586.0
+script = ExtResource( 4 )
+label_font = ExtResource( 5 )
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 349.0
+margin_top = 88.0
+margin_right = 881.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 369, 0 )
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/bold_font = ExtResource( 6 )
+custom_fonts/normal_font = ExtResource( 6 )
+custom_colors/default_color = Color( 0.788235, 0.278431, 0.278431, 1 )
+text = "CLASS PERFORMANCE"
+
+[node name="StudentListLbl" type="RichTextLabel" parent="."]
+margin_left = 750.913
+margin_top = 175.563
+margin_right = 1119.91
+margin_bottom = 257.563
+rect_min_size = Vector2( 369, 0 )
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/bold_font = ExtResource( 6 )
+custom_fonts/normal_font = ExtResource( 6 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]STUDENT LIST"
+text = "STUDENT LIST"
+
+[node name="ClassLbl" type="RichTextLabel" parent="."]
+margin_left = 32.1025
+margin_top = 176.643
+margin_right = 564.103
+margin_bottom = 258.643
+rect_min_size = Vector2( 369, 0 )
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/bold_font = ExtResource( 6 )
+custom_fonts/normal_font = ExtResource( 6 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Class:"
+
+[node name="ClassOpt" type="OptionButton" parent="."]
+margin_left = 110.346
+margin_top = 183.864
+margin_right = 275.346
+margin_bottom = 209.864
+
+[node name="StudentList" type="Node" parent="."]
+
+[node name="StudentLbls" type="Node" parent="."]
+
+[node name="generateReportBtn" type="TouchScreenButton" parent="."]
+position = Vector2( 678.826, 492.023 )
+scale = Vector2( 0.388033, 0.421841 )
+normal = ExtResource( 7 )
+
+[node name="loading" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="loadingbg" type="Sprite" parent="loading"]
+position = Vector2( 510.619, 330.049 )
+scale = Vector2( 2.191, 1 )
+texture = ExtResource( 8 )
+
+[node name="loadingani" type="AnimatedSprite" parent="loading"]
+position = Vector2( 511.949, 326.483 )
+frames = ExtResource( 9 )
+animation = "loading"
+frame = 29
+playing = true
+
+[node name="refresh_btn" type="TouchScreenButton" parent="."]
+position = Vector2( 598.564, 170.853 )
+scale = Vector2( 0.0923957, 0.0923957 )
+normal = ExtResource( 10 )

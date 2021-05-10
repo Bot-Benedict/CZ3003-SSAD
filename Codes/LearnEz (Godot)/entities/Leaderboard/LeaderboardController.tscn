@@ -1,0 +1,224 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://entities/Leaderboard/LeaderboardController.gd" type="Script" id=1]
+[ext_resource path="res://images/background.jpg" type="Texture" id=2]
+[ext_resource path="res://images/logo_small.png" type="Texture" id=3]
+[ext_resource path="res://fonts/OpenSans_Normal.tres" type="DynamicFont" id=4]
+[ext_resource path="res://images/modal_box.png" type="Texture" id=5]
+[ext_resource path="res://images/class.png" type="Texture" id=6]
+[ext_resource path="res://images/class_pressed.png" type="Texture" id=7]
+[ext_resource path="res://images/global.png" type="Texture" id=8]
+[ext_resource path="res://images/global_pressed.png" type="Texture" id=9]
+[ext_resource path="res://images/button.png" type="Texture" id=10]
+[ext_resource path="res://images/refresh.png" type="Texture" id=11]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.733333, 0.176471, 0.176471, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 0, 0, 1 )
+
+[node name="LeaderboardController" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 510.394, 298.801 )
+scale = Vector2( 0.855, 0.501 )
+texture = ExtResource( 2 )
+
+[node name="logo" type="Sprite" parent="."]
+position = Vector2( 179.55, 78.85 )
+texture = ExtResource( 3 )
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 383.504
+margin_top = 87.0166
+margin_right = 752.504
+margin_bottom = 169.017
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.74902, 0.196078, 0.196078, 1 )
+text = "LEADERBOARD"
+scroll_active = false
+
+[node name="LeaderboardBg" type="Sprite" parent="."]
+position = Vector2( 510.286, 377.296 )
+scale = Vector2( 1.75845, 2.24028 )
+texture = ExtResource( 5 )
+
+[node name="leaderboardType" type="Node" parent="."]
+
+[node name="class" type="TouchScreenButton" parent="leaderboardType"]
+position = Vector2( 375.456, 184.94 )
+scale = Vector2( 0.464608, 0.397063 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 7 )
+
+[node name="global" type="TouchScreenButton" parent="leaderboardType"]
+position = Vector2( 544.561, 184.94 )
+scale = Vector2( 0.397063, 0.397063 )
+normal = ExtResource( 8 )
+pressed = ExtResource( 9 )
+
+[node name="WorldBtns" type="Node" parent="."]
+
+[node name="World1" type="TouchScreenButton" parent="WorldBtns"]
+position = Vector2( 83.1027, 246.363 )
+scale = Vector2( 9.10873, 1 )
+normal = ExtResource( 10 )
+
+[node name="World2" type="TouchScreenButton" parent="WorldBtns"]
+position = Vector2( 83.7014, 296.765 )
+scale = Vector2( 9.12369, 1 )
+normal = ExtResource( 10 )
+
+[node name="World3" type="TouchScreenButton" parent="WorldBtns"]
+position = Vector2( 83.1027, 351.044 )
+scale = Vector2( 9.1237, 1 )
+normal = ExtResource( 10 )
+
+[node name="World4" type="TouchScreenButton" parent="WorldBtns"]
+position = Vector2( 83.1027, 404.724 )
+scale = Vector2( 9.13866, 1 )
+normal = ExtResource( 10 )
+
+[node name="World5" type="TouchScreenButton" parent="WorldBtns"]
+position = Vector2( 83.1027, 459.602 )
+scale = Vector2( 9.1686, 1 )
+normal = ExtResource( 10 )
+
+[node name="World6" type="TouchScreenButton" parent="WorldBtns"]
+position = Vector2( 83.1027, 511.68 )
+scale = Vector2( 9.1703, 1 )
+normal = ExtResource( 10 )
+
+[node name="WorldLabels" type="Node" parent="."]
+
+[node name="World1Lbl" type="RichTextLabel" parent="WorldLabels"]
+margin_left = 89.6335
+margin_top = 257.0
+margin_right = 1403.63
+margin_bottom = 346.0
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "World 1 - Project Management"
+text = "World 1 - Project Management"
+scroll_active = false
+
+[node name="World2Lbl" type="RichTextLabel" parent="WorldLabels"]
+margin_left = 89.6335
+margin_top = 308.565
+margin_right = 1403.63
+margin_bottom = 397.565
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "World 1 - Project Management"
+text = "World 1 - Project Management"
+scroll_active = false
+
+[node name="World3Lbl" type="RichTextLabel" parent="WorldLabels"]
+margin_left = 89.6335
+margin_top = 360.13
+margin_right = 1403.63
+margin_bottom = 449.13
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "World 1 - Project Management"
+text = "World 1 - Project Management"
+scroll_active = false
+
+[node name="World4Lbl" type="RichTextLabel" parent="WorldLabels"]
+margin_left = 89.6335
+margin_top = 415.378
+margin_right = 1403.63
+margin_bottom = 504.378
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "World 1 - Project Management"
+text = "World 1 - Project Management"
+scroll_active = false
+
+[node name="World5Lbl" type="RichTextLabel" parent="WorldLabels"]
+margin_left = 89.6335
+margin_top = 469.399
+margin_right = 1403.63
+margin_bottom = 558.399
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "World 1 - Project Management"
+text = "World 1 - Project Management"
+scroll_active = false
+
+[node name="World6Lbl" type="RichTextLabel" parent="WorldLabels"]
+margin_left = 89.6335
+margin_top = 522.192
+margin_right = 1403.63
+margin_bottom = 611.192
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "World 1 - Project Management"
+text = "World 1 - Project Management"
+scroll_active = false
+
+[node name="leaderboardData" type="RichTextLabel" parent="."]
+margin_left = 470.0
+margin_top = 292.0
+margin_right = 1284.0
+margin_bottom = 687.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="currentpath" type="RichTextLabel" parent="."]
+margin_left = 710.097
+margin_top = 198.318
+margin_right = 1303.1
+margin_bottom = 269.318
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="userRank" type="RichTextLabel" parent="."]
+margin_left = 469.0
+margin_top = 507.846
+margin_right = 1263.0
+margin_bottom = 575.846
+rect_scale = Vector2( 0.6, 0.6 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="Label" type="Label" parent="."]
+margin_left = 469.0
+margin_top = 249.0
+margin_right = 1257.0
+margin_bottom = 318.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Rank     Name              Score"
+
+[node name="refresh_btn" type="TouchScreenButton" parent="."]
+position = Vector2( 894.313, 186.1 )
+scale = Vector2( 0.0913093, 0.0913093 )
+normal = ExtResource( 11 )

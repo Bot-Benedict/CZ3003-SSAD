@@ -1,0 +1,357 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://entities/LoginManager/loginController.gd" type="Script" id=1]
+[ext_resource path="res://images/background.jpg" type="Texture" id=2]
+[ext_resource path="res://images/logo_small.png" type="Texture" id=3]
+[ext_resource path="res://fonts/OpenSans_Normal.tres" type="DynamicFont" id=4]
+[ext_resource path="res://images/button_login.png" type="Texture" id=5]
+[ext_resource path="res://entities/LoginManager/Login_Btn.gd" type="Script" id=6]
+[ext_resource path="res://images/modal_box.png" type="Texture" id=7]
+[ext_resource path="res://entities/LoginManager/noAccount_Popup.gd" type="Script" id=8]
+[ext_resource path="res://images/close_button.png" type="Texture" id=9]
+[ext_resource path="res://entities/LoginManager/Forget_Password.gd" type="Script" id=10]
+[ext_resource path="res://images/button_reset.png" type="Texture" id=11]
+[ext_resource path="res://entities/LoginManager/Reset_Btn.gd" type="Script" id=12]
+[ext_resource path="res://entities/LoginManager/forget_pass_success_popup.gd" type="Script" id=13]
+[ext_resource path="res://images/frames/loading/Loading.tres" type="SpriteFrames" id=14]
+
+[sub_resource type="StyleBoxLine" id=1]
+
+[sub_resource type="StyleBoxLine" id=2]
+color = Color( 0.266667, 0.254902, 0.254902, 1 )
+thickness = 4
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="LoginController" type="Node2D"]
+position = Vector2( 1, 0 )
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 510.394, 298.801 )
+scale = Vector2( 0.853, 0.501211 )
+texture = ExtResource( 2 )
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 525.964, 84.7283 )
+scale = Vector2( 1.1192, 1.15124 )
+texture = ExtResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 345.454
+margin_top = 162.37
+margin_right = 523.453
+margin_bottom = 229.37
+rect_scale = Vector2( 0.7, 0.7 )
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.0156863, 0.0117647, 0.0117647, 1 )
+text = "LOG IN"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 348.311
+margin_top = 199.748
+margin_right = 988.31
+margin_bottom = 270.748
+rect_scale = Vector2( 0.4, 0.4 )
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "with your LearnEz Account"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 344.687
+margin_top = 245.228
+margin_right = 651.687
+margin_bottom = 312.228
+rect_scale = Vector2( 0.55, 0.55 )
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.0156863, 0.0117647, 0.0117647, 1 )
+text = "USERNAME"
+scroll_active = false
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+margin_left = 348.731
+margin_top = 305.902
+margin_right = 1074.73
+margin_bottom = 317.902
+rect_scale = Vector2( 0.55, 0.55 )
+mouse_filter = 2
+custom_styles/focus = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_colors/default_color = Color( 0.0156863, 0.0117647, 0.0117647, 1 )
+scroll_active = false
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+margin_left = 349.975
+margin_top = 390.208
+margin_right = 1075.97
+margin_bottom = 402.208
+rect_scale = Vector2( 0.55, 0.55 )
+mouse_filter = 2
+custom_styles/focus = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_colors/default_color = Color( 0.0156863, 0.0117647, 0.0117647, 1 )
+scroll_active = false
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="."]
+margin_left = 346.19
+margin_top = 327.02
+margin_right = 653.19
+margin_bottom = 394.02
+rect_scale = Vector2( 0.55, 0.55 )
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.0156863, 0.0117647, 0.0117647, 1 )
+text = "PASSWORD
+"
+scroll_active = false
+
+[node name="username_empty_label" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 346.89
+margin_top = 432.813
+margin_right = 1096.89
+margin_bottom = 503.813
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.862745, 0.0352941, 0.0352941, 1 )
+text = "Please input your Username"
+
+[node name="password_empty_label" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 346.212
+margin_top = 454.458
+margin_right = 1096.21
+margin_bottom = 525.458
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.862745, 0.0352941, 0.0352941, 1 )
+text = "Please input your Password"
+
+[node name="Login_Input" type="LineEdit" parent="."]
+margin_left = 348.445
+margin_top = 284.052
+margin_right = 1824.44
+margin_bottom = 357.052
+rect_scale = Vector2( 0.3, 0.3 )
+focus_mode = 1
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.592157, 0.0392157, 0.0392157, 1 )
+focus_mode = 1
+placeholder_text = "Matriculation Number or Staff ID"
+placeholder_alpha = 1.0
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="Password_Input" type="LineEdit" parent="."]
+margin_left = 348.836
+margin_top = 368.261
+margin_right = 1824.83
+margin_bottom = 441.261
+rect_scale = Vector2( 0.3, 0.3 )
+focus_mode = 1
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.592157, 0.0392157, 0.0392157, 1 )
+secret = true
+focus_mode = 1
+placeholder_text = "Password"
+placeholder_alpha = 1.0
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="Login_Btn" type="TouchScreenButton" parent="."]
+position = Vector2( 439.281, 507.756 )
+scale = Vector2( 0.292169, 0.22381 )
+normal = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="Forget_Password_Btn" type="RichTextLabel" parent="."]
+margin_left = 347.029
+margin_top = 401.616
+margin_right = 855.029
+margin_bottom = 495.616
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.172549, 0.517647, 0.596078, 1 )
+bbcode_enabled = true
+bbcode_text = "[url={\"data\"=\"\"}]Forgot Password?[/url]"
+text = "Forgot Password?"
+
+[node name="NoAccount_Popup" type="Sprite" parent="."]
+editor/display_folded = true
+visible = false
+position = Vector2( 517.501, 274.5 )
+scale = Vector2( 1.09961, 1.16211 )
+texture = ExtResource( 7 )
+script = ExtResource( 8 )
+
+[node name="Close_Btn" type="TouchScreenButton" parent="NoAccount_Popup"]
+position = Vector2( 219.967, -109.483 )
+scale = Vector2( 0.402976, 0.390742 )
+z_index = 1
+normal = ExtResource( 9 )
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="NoAccount_Popup"]
+margin_left = -236.882
+margin_top = -74.5919
+margin_right = 383.117
+margin_bottom = 5.40805
+rect_scale = Vector2( 0.5, 0.5 )
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.0156863, 0.0117647, 0.0117647, 1 )
+text = "ACCOUNT NOT FOUND"
+scroll_active = false
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="NoAccount_Popup"]
+margin_left = -241.802
+margin_top = -12.5899
+margin_right = 952.198
+margin_bottom = 216.41
+rect_scale = Vector2( 0.4, 0.4 )
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "You do not have an account with LearnEz. Please contact the system administrator to create an account for you"
+
+[node name="Forget_Password_Popup" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 220.993, -137.507 )
+script = ExtResource( 10 )
+
+[node name="Close_Btn" type="TouchScreenButton" parent="Forget_Password_Popup"]
+position = Vector2( 533.125, 295.937 )
+scale = Vector2( 0.402976, 0.390742 )
+z_index = 1
+normal = ExtResource( 9 )
+
+[node name="Reset_Btn" type="TouchScreenButton" parent="Forget_Password_Popup"]
+position = Vector2( 422.907, 481.74 )
+scale = Vector2( 0.205039, 0.205039 )
+z_index = 1
+normal = ExtResource( 11 )
+script = ExtResource( 12 )
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="Forget_Password_Popup"]
+margin_left = 32.2278
+margin_top = 326.889
+margin_right = 652.227
+margin_bottom = 406.889
+rect_scale = Vector2( 0.5, 0.5 )
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.0156863, 0.0117647, 0.0117647, 1 )
+text = "RESET PASSWORD"
+scroll_active = false
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="Forget_Password_Popup"]
+margin_left = 34.0812
+margin_top = 399.621
+margin_right = 1392.08
+margin_bottom = 506.621
+rect_scale = Vector2( 0.4, 0.4 )
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Matriculation Number / Staff ID"
+
+[node name="RichTextLabel11" type="RichTextLabel" parent="Forget_Password_Popup"]
+margin_left = 37.6854
+margin_top = 463.355
+margin_right = 763.685
+margin_bottom = 475.355
+rect_scale = Vector2( 0.55, 0.55 )
+mouse_filter = 2
+custom_styles/focus = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_colors/default_color = Color( 0.0156863, 0.0117647, 0.0117647, 1 )
+scroll_active = false
+
+[node name="reset_password_empty_lbl" type="RichTextLabel" parent="Forget_Password_Popup"]
+margin_left = 36.914
+margin_top = 475.503
+margin_right = 1261.91
+margin_bottom = 546.503
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.862745, 0.0352941, 0.0352941, 1 )
+bbcode_enabled = true
+bbcode_text = "Please enter your matric number or staff id"
+text = "Please enter your matric number or staff id"
+
+[node name="Sprite" type="Sprite" parent="Forget_Password_Popup"]
+show_behind_parent = true
+position = Vector2( 298.761, 424.595 )
+scale = Vector2( 1.0977, 1.29769 )
+texture = ExtResource( 7 )
+
+[node name="Reset_by_ID" type="LineEdit" parent="."]
+margin_left = 257.894
+margin_top = 304.132
+margin_right = 1733.89
+margin_bottom = 377.133
+rect_scale = Vector2( 0.3, 0.3 )
+focus_mode = 1
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.592157, 0.0392157, 0.0392157, 1 )
+focus_mode = 1
+placeholder_text = "Enter your Matriculation Number or Staff ID"
+placeholder_alpha = 1.0
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="forget_pass_success_popup" type="Popup" parent="."]
+editor/display_folded = true
+margin_left = 220.993
+margin_top = -137.507
+margin_right = 260.993
+margin_bottom = -97.507
+popup_exclusive = true
+script = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="forget_pass_success_popup"]
+position = Vector2( 314.968, 448.206 )
+scale = Vector2( 1, 0.687007 )
+texture = ExtResource( 7 )
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="forget_pass_success_popup"]
+margin_left = 110.146
+margin_top = 409.631
+margin_right = 991.146
+margin_bottom = 654.631
+rect_scale = Vector2( 0.5, 0.5 )
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.0156863, 0.0117647, 0.0117647, 1 )
+text = "A link to reset your password has been sent to your registered email."
+scroll_active = false
+
+[node name="close_btn" type="TouchScreenButton" parent="forget_pass_success_popup"]
+position = Vector2( 536.808, 370.829 )
+scale = Vector2( 0.402976, 0.390742 )
+z_index = 1
+normal = ExtResource( 9 )
+
+[node name="Loading_bg" type="ColorRect" parent="."]
+modulate = Color( 0.933333, 0.839216, 0.870588, 1 )
+margin_top = 173.0
+margin_right = 1023.0
+margin_bottom = 410.0
+
+[node name="Loading_sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 515.489, 296.939 )
+scale = Vector2( 1.30154, 1.30154 )
+frames = ExtResource( 14 )
+animation = "loading"
+frame = 13
+playing = true
